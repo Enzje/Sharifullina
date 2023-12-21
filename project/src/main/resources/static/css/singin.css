@@ -1,0 +1,119 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    font-family: Russia, cursive;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+
+}
+.form-signin .form-signin-heading,
+.form-signin {
+
+    margin-top: 8px;
+
+}
+.form-signin .checkbox {
+    font-weight: 100;
+}
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 11px;
+    font-family: Russia, cursive;
+}
+
+.sr-only {
+    position: absolute;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%
+
+}
+
+button {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: white;
+    padding: 10px 4px;
+    cursor: pointer;
+    float: left;
+    font-family: Russia, cursive;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+button:not(:last-child) {
+    border-right: none;
+}
+
+
+button:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+button:hover {
+    background-color: #3c85e7;
+}
+
+.left{
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

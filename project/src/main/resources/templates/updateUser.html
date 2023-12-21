@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование пользователя</title>
+    <link rel="stylesheet" href="/css/updateUser.css" type="text/css">
+    <style>
+        .error {
+            color: red;
+            font-family: Russia, cursive;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 14px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div>
+        <h2>Редактор пользователя</h2>
+        <form action="#" th:action="@{/updateUser}" th:object="${user}" method="post">
+            <label for="id">Id</label><br>
+            <input class="input" readonly type="number" th:field="*{id}" id = "id" placeholder="Id"><br>
+
+
+            <label for="username">Имя пользователя:</label><br>
+            <input class="input"  type="text" th:field="*{username}" id="username" placeholder="Имя пользователя"/><br>
+
+            <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" th:errorclass="error"></p>
+
+
+            <label for="name">Имя:</label><br>
+            <input class="input" type="text" th:field="*{name}" id="name" placeholder="Имя"/><br>
+            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="error"></p>
+
+            <label for="surname">Фамилия:</label><br>
+            <input class="input" type="text" th:field="*{surname}" id="surname" placeholder="Фамилия"/><br>
+            <p th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" th:errorclass="error"></p>
+
+
+            <label for="password">Пароль:</label><br>
+            <div class="description">Оставьте пустым, чтобы не менять</div>
+            <input class="input" type="password" th:field="*{password}" id="password" placeholder="Пароль" /><br>
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="error"></p>
+
+
+            <div th:if="${#fields.hasGlobalErrors()}">
+                <p th:each="err : ${#fields.globalErrors()}" th:text="${err}" class="error"></p>
+            </div>
+
+            <input class="input-radio" type="radio" th:field="*{role}" value="ROLE_USER"  checked name="role"/>Пользователь
+            <input class="input-radio" type="radio" th:field="*{role}" value="ROLE_ADMIN" name="role"/>Администратор<br/>
+
+            <button type="submit">Изменить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

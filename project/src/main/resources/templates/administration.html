@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/administration.css" type="text/css">
+  <title>Администрирование</title>
+  <style>
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+<h2 class="admin">Администрирование</h2>
+<div th:switch="${users}">
+  <h2 class="admin" th:case="null">Пользователи в базе данных отсутствуют</h2>
+  <div th:case="*">
+    <h2 class="admin">Пользователи</h2>
+    <table>
+      <thead>
+      <tr>
+        <td>Id</td>
+        <td>Имя пользователя</td>
+        <td>Имя</td>
+        <td>Фамилия</td>
+        <td>Роль</td>
+
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr th:each="user : ${users}">
+
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+
+
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.role}"></td>
+        <td><button><a th:href="@{/updateUser/{id}(id=${user.id})}" >Редактировать</a></button>
+          <button th:if="${!user.username.equals(authUser)}"><a th:href="@{/deleteUser/{id}(id=${user.id})}" >Удалить</a></button>
+        </td>
+
+      </tr>
+
+      </tbody>
+
+    </table>
+  </div>
+  <button type="submit"><a th:href="@{/createUser}">Добавить пользователя</a></button>
+  <button type="submit"><a th:href="@{/page}">Моя страница</a></button>
+</div>
+
+</body>
+</html>
+

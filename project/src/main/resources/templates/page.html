@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Моя страница</title>
+    <link rel="stylesheet" href="/css/page.css" type="text/css">
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="band">
+    <img src="userPhoto.png" alt="Фото пользователя" class="user-photo">
+    <p class="username" th:text="${fio}"></p>
+
+</div>
+
+<div class="wrapper">
+    <div class="function">
+        <button class="buttons" type="submit"><a href="/inDeveloping">Сообщения</a></button>
+        <br>
+        <button class="buttons" type="submit"><a href="/inDeveloping">Настройки</a></button>
+        <br>
+        <!-- th:if="${user.role == 'ROLE_ADMIN'}"-->
+        <th:block th:if="${user.role == 'ROLE_ADMIN'}"> <button class="buttons"  type="submit"><a th:href="@{/administration}">Администрирование</a></button>
+            <br></th:block>
+
+        <button class="buttons" type="submit"><a th:href="@{/logout}">Выйти</a></button>
+        <br>
+    </div>
+
+    <div>
+        <!--
+
+                  -->
+        <form action="#" th:action="@{/page}" method="post">
+
+                <textarea name="tweet"
+                          rows="2" cols="30"
+                          maxlength="75"></textarea>
+
+
+            <button class="input-btn" type="submit">Отправить твит</button>
+        </form>
+
+    </div>
+
+    <div class="tweets">
+
+        <table>
+            <thead>
+            <tr>
+
+                <td></td>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="tweet : ${tweets}">
+
+                <td class="p" th:text="${tweet.tweet}"></td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
+

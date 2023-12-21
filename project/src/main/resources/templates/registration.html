@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+
+    <link rel="stylesheet" href="/css/registration.css" type="text/css">
+</head>
+<body>
+<div>
+    <h2>Регистрация</h2>
+
+    <form action="#" th:action="@{/registration}" th:object="${user}" method="post">
+
+
+
+        <input type="text" th:field="*{username}" autocomplete="false" required placeholder="Имя пользователя"/><br>
+        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error"></p>
+
+
+        <input type="text" th:field="*{name}"  placeholder="Имя"/><br>
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></p>
+
+        <input type="text" th:field="*{surname}"  placeholder="Фамилия"/><br>
+        <p th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" class="error"></p>
+
+
+
+
+        <input type="password" th:field="*{password}"  placeholder="Пароль"/><br>
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error"></p>
+
+
+        <input type="password" th:field="*{confirmPassword}" placeholder="Повторите пароль"/><br>
+
+
+        <div th:if="${#fields.hasGlobalErrors()}">
+            <p th:each="err : ${#fields.globalErrors()}" th:text="${err}" class="error"></p>
+        </div>
+
+        <button type="submit">Зарегистрироваться</button>
+
+    </form>
+
+</div>
+</body>
+</html>
+
+
+

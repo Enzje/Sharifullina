@@ -1,0 +1,104 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    font-family: Russia, cursive;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+
+.input-box {
+    /* родительский блок относительно которого будем формировать положение
+    тега label */
+    position: relative;
+
+}
+
+input {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    /* закруглим края у поля ввода */
+    border-radius: 11px;
+    width: 200px;
+    font-family: Russia, cursive;
+}
+
+
+
+button {
+
+    width: 200px;
+
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 4px;
+    border-radius: 5px;
+    font-family: Russia, cursive;
+    font-size: 16px;
+
+
+}
+
+
+button:hover {
+    background-color: #3c85e7;
+}
+
+
+
+.error{
+    color: red;
+    font-family: Russia, cursive;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

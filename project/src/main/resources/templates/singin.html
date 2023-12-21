@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" xmlns:th="http://www.thymeleaf.org">
+    <title>login</title>
+<style>
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    .error{
+        color: red;
+        font-family: Russia, cursive;
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 14px;
+        text-align: left;
+    }
+</style>
+    <link rel="stylesheet" href="/css/singin.css" type="text/css">
+
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" method="post" action="/">
+        <h2 class="form-signin-heading">Пожалуйста, войдите</h2>
+        <p>
+            <label for="username" class="sr-only">Имя пользователя</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Имя пользователя">
+        </p>
+        <p>
+            <label for="password" class="sr-only">Пароль</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Пароль">
+        </p>
+        <p th:if="${!usOrPassError.isEmpty()}" th:text="*{usOrPassError}" class="error"></p>
+        <div style="width: 255px">
+            <button style="width: 48%" type="submit">Вход</button>
+            <button class="left" style="width: 48%" type="submit"><a href="/registration">Регистрация</a></button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
